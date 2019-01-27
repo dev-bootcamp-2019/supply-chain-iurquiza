@@ -81,15 +81,15 @@ contract SupplyChain {
         _;
     }
     modifier sold(uint _sku) {
-        require(items[_sku].state == State.Sold);
+        require(items[_sku].state == State.Sold, "Not sold"));
         _;
     }
     modifier shipped(uint _sku) {
-        require(items[_sku].state == State.Shipped);
+        require(items[_sku].state == State.Shipped, "Not for sale"));
         _;
     }
     modifier received(uint _sku) {
-        require(items[_sku].state == State.Received);
+        require(items[_sku].state == State.Received, "Not for sale"));
         _;
     }
 
@@ -158,5 +158,4 @@ contract SupplyChain {
         buyer = items[_sku].buyer;
         return (name, sku, price, state, seller, buyer);
     }
-
 }

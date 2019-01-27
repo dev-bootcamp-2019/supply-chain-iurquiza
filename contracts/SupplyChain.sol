@@ -81,15 +81,15 @@ contract SupplyChain {
         _;
     }
     modifier sold(uint _sku) {
-        require(items[_sku].state == State.Sold, "Not sold"));
+        require(items[_sku].state == State.Sold, "Not sold");
         _;
     }
     modifier shipped(uint _sku) {
-        require(items[_sku].state == State.Shipped, "Not for sale"));
+        require(items[_sku].state == State.Shipped, "Not shipped");
         _;
     }
     modifier received(uint _sku) {
-        require(items[_sku].state == State.Received, "Not for sale"));
+        require(items[_sku].state == State.Received, "Not received");
         _;
     }
 
